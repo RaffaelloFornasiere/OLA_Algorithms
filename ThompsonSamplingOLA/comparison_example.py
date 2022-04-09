@@ -1,8 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from Enviroment import *
-from TS_Learner import *
-from Greedy_Learner import *
+from Environment import *
+from Learners.TS_Learner import *
+from Learners.Greedy_Learner import *
 
 n_arms = 4
 p = np.array([0.15, 0.1, 0.1, 0.35])
@@ -17,12 +16,12 @@ for e in range(0, n_experiments):
     ts_learner = TS_Learner(n_arms=n_arms)
     gr_learner = Greedy_Learner(n_arms=n_arms)
     for t in range(0, T):
-        # Thompson Sampling Learner
+        # Thompson Sampling Learners
         pulled_arm = ts_learner.pull_arm()
         reward = env.round(pulled_arm)
         ts_learner.update(pulled_arm, reward)
 
-        # Greedy Learner
+        # Greedy Learners
         pulled_arm = gr_learner.pull_arm()
         reward = env.round(pulled_arm)
         gr_learner.update(pulled_arm, reward)

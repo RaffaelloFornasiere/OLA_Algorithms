@@ -1,4 +1,4 @@
-from Learner import *
+from Learners.Learner import *
 
 
 class Greedy_Learner (Learner):
