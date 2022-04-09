@@ -3,14 +3,13 @@ import numpy as np
 
 class CUSUM:
     def __init__(self, M, eps, h):
-        if __name__ == '__main__':
-            self.M = M
-            self.eps = eps,
-            self.h = h,
-            self.t = 0
-            self.reference = 0
-            self.g_plus = 0
-            self.g_minus = 0
+        self.M = M
+        self.eps = eps
+        self.h = h
+        self.t = 0
+        self.reference = 0
+        self.g_plus = 0
+        self.g_minus = 0
 
     def update(self, sample):
         self.t += 1

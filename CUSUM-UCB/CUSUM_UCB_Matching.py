@@ -5,7 +5,7 @@ from CUSUM import CUSUM
 
 
 class CUSUM_UCB_Matching(UCB_Matching):
-    def __init__(self, n_arms, n_cols, M=100, eps=0.05, h=20, alpha=0.01):
+    def __init__(self, n_arms, n_rows, n_cols, M=100, eps=0.05, h=20, alpha=0.01):
         super().__init__(n_arms, n_rows=n_rows, n_cols=n_cols)
         self.change_detection = [CUSUM(M, eps, h) for _ in range(n_arms)]
         self.valid_rewards_per_arms = [[] for _ in range(n_arms)]
@@ -18,11 +18,14 @@ class CUSUM_UCB_Matching(UCB_Matching):
             upper_conf[np.isinf(upper_conf)] = 1e3
             row_ind, col_ind = linear_sum_assignment(-upper_conf.reshape(self.n_rows, self.n_cols))
             return row_ind, col_ind
+        else:
+            cost_random = np.random.randint(0, 10, size=(self.n_rows, self.n_cols))
+            return linear_sum_assignment(cost_random)
 
     def update(self, pulled_arms, rewards):
         self.t += 1
         pulled_arm_flat = np.ravel_multi_index(pulled_arms, (self.n_rows, self.n_cols))
-        for pulled_arm, rewards in zip(pulled_arm_flat, rewards):
+        for pulled_arm, reward in zip(pulled_arm_flat, rewards):
             if self.change_detection[pulled_arm].update(reward):
                 self.detections[pulled_arm].append(self.t)
                 self.valid_rewards_per_arms[pulled_arm] = []
