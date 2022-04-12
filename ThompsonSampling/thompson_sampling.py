@@ -59,7 +59,7 @@ def run():
     for i in range(2000):
         if i < 10 or (i < 100 and (i+1) % 10 == 0) or ((i+1) % 100 == 0):
             print(i)
-            draw_distributions(global_restaurants, i)
+            # draw_distributions(global_restaurants, i)
             if i > 0:
                 plt.show()
             else:

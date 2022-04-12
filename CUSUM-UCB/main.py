@@ -1,6 +1,9 @@
 from scipy.optimize import linear_sum_assignment
+import sys
+sys.path.append('../Environments/')
+
 from Environment import Environment
-from Environments.NonStationaryEnvironment import Non_Stationary_Environment
+from NonStationaryEnvironment import Non_Stationary_Environment
 from UCB import UCB_Matching
 from CUSUM_UCB_Matching import CUSUM_UCB_Matching
 import matplotlib.pyplot as plt
