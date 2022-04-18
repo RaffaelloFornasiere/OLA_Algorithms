@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from Environments.NonStationaryEnvironment import Non_Stationary_Environment
-# from Environments.Environment import Environment
-import Environment
+sys.path.append('../Environments/')
+
+from Environments.Environment import Environment
 
 from Learners.SWTS_Learner import SWTS_Learner
 from Learners.TS_Learner import TS_Learner
