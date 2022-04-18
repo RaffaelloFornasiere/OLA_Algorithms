@@ -4,6 +4,9 @@ import seaborn as sns
 from typing import List
 import platform
 
+# this code is from this tutorial
+# https://www.youtube.com/watch?v=D8bofQKCUls&t=333s
+
 
 class Restaurant:
     def __init__(self, mu, sigma):
