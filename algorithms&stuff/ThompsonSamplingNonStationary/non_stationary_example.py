@@ -1,12 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from Environments.NonStationaryEnvironment import Non_Stationary_Environment
+from Algorithms.Environments.NonStationaryEnvironment import Non_Stationary_Environment
 sys.path.append('../Environments/')
 
-from Environments.Environment import Environment
-
-from Learners.SWTS_Learner import SWTS_Learner
-from Learners.TS_Learner import TS_Learner
+from Algorithms.Learners.SWTS_Learner import SWTS_Learner
+from Algorithms.Learners.TS_Learner import TS_Learner
 
 n_arms = 4
 n_phases = 4

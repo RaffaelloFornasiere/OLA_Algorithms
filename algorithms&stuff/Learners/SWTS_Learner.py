@@ -1,5 +1,5 @@
 import numpy as np
-from Learners.TS_Learner import TS_Learner
+from Algorithms.Learners.TS_Learner import TS_Learner
 
 
 class SWTS_Learner(TS_Learner):

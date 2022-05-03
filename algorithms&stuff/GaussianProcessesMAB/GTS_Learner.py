@@ -1,7 +1,7 @@
 import numpy as np
 
 sys.path.append('../Learners/')
-from Learners.Learner import Learner
+from Algorithms.Learners.Learner import Learner
 
 
 class GTS_Learner(Learner):

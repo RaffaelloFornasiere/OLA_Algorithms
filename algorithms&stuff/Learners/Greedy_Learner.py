@@ -1,4 +1,4 @@
-from Learners.Learner import *
+from Algorithms.Learners.Learner import *
 
 
 class Greedy_Learner (Learner):
